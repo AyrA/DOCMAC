@@ -111,6 +111,29 @@ Differences:
 The default is to zero 9 indexes.
 This makes the random address space just as large as the DOCMAC address space.
 
-#Example
+# Usage
+
+DOCMAC and DOCRND are very easy to use.
+Very few lines are required.
+The global DOCMAC object has more functions if needed.
+
+## DOCMAC
+
+```js
+//"true" means shorten the address using "::"
+console.log(DOCMAC.getIPFromMAC("FF-EE-DD-CC-BB-AA", true));
+```
+
+## DOCRND
+
+```js
+var zeros = 9;
+var result = DOCRND.getRandomIP(zeros);
+console.log(result["short"]); //Address shortened with "::" syntax
+console.log(result["long"]);  //Address in expanded format
+console.log(result["raw"]);   //Address as Uint16Array instance
+```
+
+# Example
 
 [Reference implemantation in use](https://cable.ayra.ch/docmac/)
