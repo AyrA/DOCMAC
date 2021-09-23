@@ -87,7 +87,7 @@ DOCRND.getRandomIP = function (zeros) {
         if (i < 4) {
             return [0x2001, 0x0DB8, 0x4159, 0x5241][i];
         }
-        return zeros-- > 0 ? 0 : Math.random() * 0x1000 | 0;
+        return zeros-- > 0 ? 0 : Math.random() * 0x10000 | 0;
     });
     return {
         "short": DOCMAC.formatIPv6(addr, true),
